@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Area Layout</title>
+  <style>
+    .header,
+    .nav,
+    .main,
+    .sidebar,
+    .advertise,
+    .footer {
+      background-color: bisque;
+      border: 2px solid tomato;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .nav {
+      grid-area: nav;
+    }
+
+    .main {
+      grid-area: main;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+
+    .advertise {
+      grid-area: advertise,
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+
+    .container {
+      display: grid;
+      gap: 20px;
+      grid-template-areas:
+        "header  header  header  header"
+        "nav     main    main    sidebar "
+        "nav     main    main    advertise"
+        "footer  footer  footer  footer"
+      ;
+    }
+
+    @media screen and (max-width:576px) {
+      .container {
+        grid-template-areas:
+          "header"
+          "nav"
+          "main"
+          "sidebar"
+          "advertise"
+          "footer"
+      }
+    }
+
+    @media screen and (min-width:576px) and (max-width:992px) {
+      .container {
+        grid-template-areas:
+          "header header header"
+          " nav nav nav"
+          "sidebar main main"
+          "advertise footer footer"
+        ;
+      }
+    }
+  </style>
+</head>
+
+<body class="container">
+
+  <header class="header">
+    <h1>The header</h1>
+  </header>
+  <nav class="nav">
+    <ul>
+      <li><a href=" "></a>Nav 1</li>
+      <li><a href=""></a>Nav 2</li>
+      <li><a href=""></a>Nav 3</li>
+    </ul>
+  </nav>
+  <main class="main">
+    <article>
+      <h3>Main Article 1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cumque suscipit nihil nemo dolor minus
+        praesentium
+        architecto eligendi porro explicabo.</p>
+    </article>
+    <article>
+      <h3>Main Article 2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cumque suscipit nihil nemo dolor minus
+        praesentium architecto eligendi porro explicabo.</p>
+    </article>
+
+
+  </main>
+  <!-- <aside> -->
+  <div class="sidebar">
+    <h4>Sidebar</h4>
+  </div>
+  <div class="advertise">
+    <h4>Advertise</h4>
+  </div>
+
+  <footer class="footer">
+    <h3>The footer</h3>
+  </footer>
+</body>
+
+</html>
